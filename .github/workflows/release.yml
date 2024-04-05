@@ -33,11 +33,11 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Build Wheel
         run: python3 -m build
-      - name: Store the distribution packages
-        uses: actions/upload-artifact@v3
-        with:
-          name: python-package-distributions
-          path: dist/
+      # - name: Store the distribution packages
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: python-package-distributions
+      #     path: dist/
       - name: Create release
         uses: actions/create-release@v1
         env:
