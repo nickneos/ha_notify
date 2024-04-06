@@ -17,15 +17,15 @@ class HomeAssistantNotify:
     def __init__(
         self,
         ha_url="http://127.0.0.1:8123",
-        token=None,
         endpoint="/api/services/notify/notify",
+        token=None
     ):
         """Initialize `HomeAssistantNotify` class.
 
         Args:
             ha_url (str): The URL of your Home Assistant server. Defaults to `http://127.0.0.1:8123`.
+            endpoint (str): The endpoint to send the api request.
             token (str): Your home assistant api token.
-            endpoint (str): The endpoint to send the .
         """
         self.url = os.path.join(ha_url, endpoint)
         self.headers = {"Authorization": f"Bearer {token}"}
